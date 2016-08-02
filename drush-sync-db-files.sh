@@ -48,7 +48,8 @@ if [ $DO_DATABASE = 1 ]
 				mysqladmin -u$USER -p$PW -h $SERVER --port $PORT create $DATABASE
 		fi
 		# Sync the DB
-		echo "Syncing '$DATABASE' with defined drush aliases..."
+		echo "Removing old DB tables and syncing '$DATABASE' with defined drush aliases..."
+		drush $DRUSHDEST sql-drop -y
 		drush sql-sync $DRUSHSRC $DRUSHDEST -y
 	else
 		echo 'Database not synced...'
