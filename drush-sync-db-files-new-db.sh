@@ -5,8 +5,8 @@
 # vilepickle@gmail.com
 # 11/7/2016 Version 1.1
 #
-# THIS SCRIPT ASSUMES ~/.drush/site.aliases.drushrc.php IS FILLED OUT PROPERLY! SEE DEMO AT END
-# OF FILE.
+# THIS SCRIPT ASSUMES ~/.drush/site.aliases.drushrc.php IS FILLED OUT PROPERLY! See demo in
+# Git repository.
 #
 #############################################################################################
 
@@ -63,30 +63,3 @@ if [ $DO_FILES = 1 ]
 	else
 		echo 'Files not synced...'
 fi
-
-# SAMPLE ~/.drush/site.aliases.drushrc.php
-#
-# <?php
-# // yoursite.com.local
-# $sites = '/home/david/gfs/';
-# $aliases['local'] = array(
-#   'uri' => 'yoursite.com.local',
-#   'root' => $gfs_sites . 'yoursite.com/public_html',
-#   'path-aliases' => array(
-#     '%dump-dir' => $sites . 'drush.dbdumps',
-#     '%files' => $sites . 'yoursite.com/public_html/sites/yoursite.com/files'
-#   )
-# );
-# 
-# // yoursite.com
-# $remote_site_root = '/home/leadmgmt/app/leadmanagement/public_html/';
-# $aliases['prod'] = array(
-#   'uri' => 'yoursite.com',
-#   'remote-host' => 'yoursite.com',
-#   'remote-user' => 'yoursite',
-#   'root' => $remote_site_root,
-#   'path-aliases' => array(
-#     '%dump-dir' => '/home/yoursite/drush.dbdumps',
-#     '%files' => $remote_site_root . 'sites/yoursite.com/files'
-#   ),
-# );
