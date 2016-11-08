@@ -28,18 +28,18 @@ DRUSHDEST="@site.local"
 if [ $DO_DATABASE = 1 ]
   then
     # Sync the DB
-    echo "Syncing '$DATABASE' with defined drush aliases..."
+    echo "Syncing '$DRUSHDEST' from '$DRUSHSRC'..."
     drush $DRUSHDEST sql-drop -y
     drush sql-sync $DRUSHSRC $DRUSHDEST -y
   else
-    echo 'Database not synced...'
+    echo "Database not synced to '$DRUSHDEST'..."
 fi
 
 
 if [ $DO_FILES = 1 ]
   then
-    echo 'Syncing files from source with drush rsync...'
+    echo "Syncing files from '$DRUSHDEST' with '$DRUSHSRC' via rsync..."
     drush -y rsync $DRUSHSRC:%files/ $DRUSHDEST:%files
   else
-    echo 'Files not synced...'
+    echo "Files not synced to '$DRUSHDEST'..."
 fi
