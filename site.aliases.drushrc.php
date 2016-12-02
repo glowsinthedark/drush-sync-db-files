@@ -21,4 +21,9 @@ $aliases['prod'] = array(
     '%dump-dir' => '/home/yoursite/drush.dbdumps',
     '%files' => $remote_site_root . 'sites/yoursite.com/files'
   ),
+  'command-specific' => array(
+   'sql-dump' => array(
+      'structure-tables-list' => 'cache*,ctools_css_cache,ctools_object_cache,history,sessions,search*,watchdog'
+    ),
+  ),
 );
